@@ -1,0 +1,29 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: kbot
+  namespace: kbot
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/Mardukay/kbot
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kbot
+  namespace: kbot
+spec:
+  chart:
+    spec:
+      chart: ./helm
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: GitRepository
+        name: kbot
+  interval: 1m0s
+  values:
+    metrichost:
+      key: otel-collector:4317

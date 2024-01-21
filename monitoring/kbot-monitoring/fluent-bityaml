@@ -1,8 +1,9 @@
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: fluent-bit
-  namespace: logging
+  namespace: kbot
   labels:
     k8s-app: fluent-bit-logging
     version: v1
@@ -24,7 +25,7 @@ spec:
     spec:
       containers:
       - name: fluent-bit
-        image: fluent/fluent-bit:1.5
+        image: fluent/fluent-bit:latest
         imagePullPolicy: Always
         ports:
           - containerPort: 3001
