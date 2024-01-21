@@ -42,20 +42,18 @@
 
 10. Deploy kbot
 
-   - create secret with telegram token - flux manifest monitoring/kbot-monitoring/kbot-secret.yaml
-   - deploy kbot app - flux manifest monitoring/kbot-monitoring/kbot.yaml
+    - create secret with telegram token - flux manifest monitoring/kbot-monitoring/kbot-secret.yaml
+    - deploy kbot app - flux manifest monitoring/kbot-monitoring/kbot.yaml
 
-    
+Screenshots from grafana dashboard
 
-    Screenshots from grafana dashboard
+   1. Grafana datasources![](https://github.com/Mardukay/observability-stack/blob/main/images/grafana-datasporces.png)
 
-    1. Grafana datasources![](https://github.com/Mardukay/observability-stack/blob/main/images/grafana-datasporces.png)
+   2. Prometheus metric from kbot that show total count of hello message![](https://github.com/Mardukay/observability-stack/blob/main/images/prometheus-hello-count.png)
 
-    2. Prometheus metric from kbot that show total count of hello message![](https://github.com/Mardukay/observability-stack/blob/main/images/prometheus-hello-count.png)
+   3. Prometheus metric from kbot that show total count of hello message after more messages![](https://github.com/Mardukay/observability-stack/blob/main/images/prometheus-hello-count-change.png)
 
-    3. Prometheus metric from kbot that show total count of hello message after more messages![](https://github.com/Mardukay/observability-stack/blob/main/images/prometheus-hello-count-change.png)
-
-    4. Loki logs from cluster![](https://github.com/Mardukay/observability-stack/blob/main/images/loki-logs.png)
+   4. Loki logs from cluster![](https://github.com/Mardukay/observability-stack/blob/main/images/loki-logs.png)
 
        
 
